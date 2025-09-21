@@ -315,20 +315,20 @@ body {
 }
 
 
-/* ================= MODAL ================= */
+/* ================= MODAL THEME ================= */
 .modal-content {
-  border-radius: 0.8rem;
+  border-radius: 1rem;
   overflow: hidden;
   border: none;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   transition: all 0.3s ease-in-out;
+  background-color: #111; /* Dark background */
 }
 
 .left-section {
   width: 100%;
   max-width: 40%;
-  background-size: cover;
-  background-position: center;
+  background: url('dheera_two.jpg') center/cover no-repeat; /* Background image */
   position: relative;
   color: #fff;
 }
@@ -337,7 +337,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(1,44,88,0.8);
+  background: rgba(17,17,17,0.7); /* dark overlay */
   z-index: 1;
 }
 
@@ -349,36 +349,72 @@ body {
 .right-section {
   width: 100%;
   max-width: 60%;
+  background-color: #111; /* dark right panel */
+  color: #fff;
+  position: relative;
 }
 
 .modal .form-control {
   font-size: 14px;
   border-radius: 0.3rem;
+  border: 1px solid #555;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.modal .form-control::placeholder {
+  color: #ccc;
 }
 
 .modal .form-control:focus {
-  box-shadow: 0 0 0 0.2rem rgba(1,76,129,0.25);
-  border-color: #0172c1;
+  box-shadow: 0 0 0 0.2rem rgba(245,217,118,0.25); /* golden focus */
+  border-color: rgb(245,217,118);
 }
 
-.modal .btn-dark {
-  background-color: #343a40;
+.modal .btn-golden {
+  background-color: rgb(245,217,118); /* golden button */
+  color: #111;
+  font-weight: 600;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.modal .btn-dark:hover {
-  background-color: #23272b;
+.modal .btn-golden:hover {
+  background-color: #e6d176;
   transform: translateY(-2px);
 }
 
 .modal .btn-close {
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(255,255,255,0.1);
   padding: 0.4rem;
   border-radius: 50%;
 }
 
 .modal .btn-close:hover {
-  background-color: rgba(0,0,0,0.15);
+  background-color: rgba(255,255,255,0.25);
+}
+
+/* Text colors */
+.text-golden {
+  color: rgb(245,217,118) !important;
+}
+
+.text-light {
+  color: #ccc !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column !important;
+  }
+
+  .left-section, .right-section {
+    max-width: 100%;
+  }
+
+  .left-section {
+    height: 200px;
+  }
 }
 
 /* ================= RESPONSIVE ================= */
