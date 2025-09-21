@@ -1,0 +1,805 @@
+/* ================= GENERAL STYLES ================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #070707;
+}
+
+.main-container {
+  position: relative;
+}
+
+/* ================= NAVBAR ================= */
+.image-navbar {
+  width: 100%;
+  z-index: 1030;
+  transition: all 0.3s ease;
+  background-color: #111 !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-decoration: none !important;
+  letter-spacing: 1px;
+  padding-left: 20px;
+  font-family: 'Bodoni Moda', 'Playfair Display', Didot, "Bodoni MT", serif;
+}
+
+.navbar-brand:hover {
+  color: #f1c40f !important;
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.5rem 1.2rem;
+  margin: 0 0.5rem;
+  color: #fff !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link i {
+  background-image: linear-gradient(45deg, rgb(200,148,44), rgb(245,217,118), rgb(216,172,66));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+  margin-right: 6px;
+}
+
+.nav-link:hover {
+  color: #e67e22 !important;
+}
+
+.nav-link:hover i {
+  transform: scale(1.2);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #f1c40f, #e67e22);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 70%;
+}
+
+/* Navbar Responsive */
+@media (max-width: 992px) {
+  .image-navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem;
+    margin: 0.3rem 0;
+  }
+
+  .nav-link::after {
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 0;
+    height: 100%;
+    background: rgba(230, 126, 34, 0.1);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 5px;
+    height: 100%;
+  }
+}
+
+/* ================= HERO & IMAGE SECTIONS ================= */
+.hero-section {
+  position: relative;
+  width: 100%;
+  margin-top: 56px; /* navbar height */
+}
+
+.image-section {
+  position: relative; /* parent for absolute positioning */
+  width: 100%;
+}
+
+
+.building-image,
+.carousel-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 80vh;
+}
+
+/* ================= INFO CARD ================= */
+.info-card {
+  width: 300px;
+  min-height: 380px;
+  position: absolute; /* relative to .image-section */
+  top: 20px;
+  left: 20px;
+  z-index: 10; /* above carousel images */
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+/* Company Title */
+.company-title {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* About Text */
+.about-text {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-top: 15px;
+  color: #fff;
+}
+
+/* Gradient text */
+.gradient-text {
+  background-image: linear-gradient(45deg, rgb(200,148,44), rgb(245,217,118), rgb(216,172,66));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* Greeting */
+#greeting {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Marquee */
+#marquee-container {
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+#marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+  background-image: linear-gradient(45deg, rgb(200,148,44), rgb(245,217,118), rgb(216,172,66));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .info-card {
+    position: relative; /* relative for stacking in flow */
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/* ================= OVERVIEW SECTION ================= */
+.overview-section {
+  background-color: transparent; /* keep original background / image visible */
+}
+
+/* Overview h5 heading - golden */
+.overview-section h5 {
+  color: rgb(245, 217, 118) !important; /* golden color */
+  font-weight: 600;
+}
+
+/* Overview Heading - A LANDMARK / That Checks / Every Box */
+.overview-heading {
+  font-family: 'Bodoni Moda', 'Playfair Display', Didot, "Bodoni MT", serif;
+  line-height: 1.1;
+  font-weight: 100;
+  color: #fff !important; /* white color */
+}
+
+.overview-heading span {
+  display: block;
+  color: #fff; /* ensure all lines are white */
+}
+
+/* Individual sizes */
+.landmark {
+  font-size: 4rem;
+}
+
+.checks {
+  font-size: 2.5rem;
+}
+
+.every-box {
+  font-size: 3rem;
+  margin-left: 20px;
+}
+
+/* Overview text */
+.overview-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* Icons & labels - golden */
+.overview-section .bi {
+  color: rgb(245, 217, 118);
+}
+
+.overview-section .row p {
+  color:#fff !important;
+  font-weight: 500;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1200px) {
+  .landmark { font-size: 3.5rem; }
+  .checks { font-size: 2.2rem; }
+  .every-box { font-size: 2.5rem; margin-left: 15px; }
+  .overview-text { font-size: 0.95rem; }
+}
+
+@media (max-width: 992px) {
+  .landmark { font-size: 3rem; }
+  .checks { font-size: 2rem; }
+  .every-box { font-size: 2.2rem; margin-left: 10px; }
+  .overview-text { font-size: 0.9rem; }
+}
+
+@media (max-width: 768px) {
+  .landmark { font-size: 2.5rem; }
+  .checks { font-size: 1.8rem; }
+  .every-box { font-size: 2rem; margin-left: 5px; }
+  .overview-text { font-size: 0.85rem; }
+}
+
+@media (max-width: 576px) {
+  .landmark { font-size: 2rem; }
+  .checks { font-size: 1.5rem; }
+  .every-box { font-size: 1.8rem; margin-left: 0; }
+  .overview-text { font-size: 0.8rem; }
+}
+
+/* Wrapper for heading and divider */
+.overview-title-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; /* space below heading */
+}
+
+/* Overview h5 */
+.overview-title-wrapper h5 {
+  color: rgb(245, 217, 118); /* golden color */
+  font-weight: 600;
+  margin: 0;
+  margin-right: 15px; /* space between word and line */
+}
+
+/* Divider line next to Overview */
+.title-divider {
+  flex-grow: 1;             /* fill remaining space */
+  height: 1px;              /* thin line */
+  background-color: #3d3d3d;   /* white line */
+}
+
+
+/* ================= MODAL ================= */
+.modal-content {
+  border-radius: 0.8rem;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.left-section {
+  width: 100%;
+  max-width: 40%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+}
+
+.left-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(1,44,88,0.8);
+  z-index: 1;
+}
+
+.left-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+.right-section {
+  width: 100%;
+  max-width: 60%;
+}
+
+.modal .form-control {
+  font-size: 14px;
+  border-radius: 0.3rem;
+}
+
+.modal .form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(1,76,129,0.25);
+  border-color: #0172c1;
+}
+
+.modal .btn-dark {
+  background-color: #343a40;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modal .btn-dark:hover {
+  background-color: #23272b;
+  transform: translateY(-2px);
+}
+
+.modal .btn-close {
+  background-color: rgba(0,0,0,0.05);
+  padding: 0.4rem;
+  border-radius: 50%;
+}
+
+.modal .btn-close:hover {
+  background-color: rgba(0,0,0,0.15);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1200px) {
+  .info-card {
+    width: 260px;
+  }
+
+  .company-title {
+    font-size: 1.3rem;
+  }
+
+  #greeting {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .info-card {
+    width: 220px;
+    min-height: 350px;
+    top: 70px;
+    left: 10px;
+    padding: 15px;
+  }
+
+  .company-title {
+    font-size: 1.2rem;
+  }
+
+  #greeting {
+    font-size: 0.95rem;
+  }
+
+  .hero-section {
+    margin-top: 60px;
+  }
+
+  .carousel-img {
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-card {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 70px;
+    padding: 15px;
+  }
+
+  .company-title {
+    font-size: 1.1rem;
+  }
+
+  #greeting {
+    font-size: 0.9rem;
+  }
+
+  #marquee-text {
+    font-size: 0.9rem;
+  }
+
+  .about-text {
+    font-size: 0.8rem;
+  }
+
+  .carousel-img {
+    max-height: 50vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .info-card {
+    width: 95%;
+    padding: 10px;
+    top: 60px;
+  }
+
+  .company-title {
+    font-size: 1rem;
+  }
+
+  #greeting {
+    font-size: 0.85rem;
+  }
+
+  #marquee-text {
+    font-size: 0.85rem;
+  }
+
+  .about-text {
+    font-size: 0.75rem;
+  }
+}
+
+.section-divider {
+  border: 0;
+  height: 1px;             /* thinner line */
+  background-color: #5c5c5c;  /* white color */
+  margin: 0.1rem 0;          /* spacing above and below */
+  width: 100%;             /* full width */
+}
+
+
+
+/* ================= SERVICES SECTION ================= */
+.services-section {
+  background-color: #070707; /* dark background */
+  width: 90;
+}
+
+.services-title {
+  color: rgb(245, 217, 118); /* golden color for small heading */
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.services-heading {
+  font-family: 'Bodoni Moda', 'Playfair Display', Didot, "Bodoni MT", serif;
+  font-weight: 700;
+}
+
+.service-card {
+  background-color: #0f0e0e; /* slightly lighter card */
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(245, 217, 118, 0.4);
+}
+
+.service-card i {
+  color: rgb(245, 217, 118); /* golden icons */
+}
+
+.service-card h5 {
+  color: #fff;
+  font-weight: 600;
+}
+
+.service-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .service-card {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-card {
+    padding: 2rem 1rem;
+  }
+}
+
+/* ================= PROJECTS SECTION ================= */
+.projects-section {
+  background-color: #111; /* dark background */
+}
+
+.projects-section .section-title-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.projects-section .section-title-wrapper h5 {
+  color: rgb(245, 217, 118); /* golden small heading */
+  font-weight: 600;
+  margin: 0;
+  margin-right: 15px;
+}
+
+.projects-section .title-divider {
+  flex-grow: 1;
+  height: 1px;
+  background-color:#5c5c5c /* thin white line */
+}
+
+.projects-section .section-heading {
+  font-family: 'Bodoni Moda', 'Playfair Display', Didot, "Bodoni MT", serif;
+  font-weight: 700;
+}
+
+/* Project Card */
+.project-card {
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 300px; /* fixed card height */
+  position: relative;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;      /* fill the card height */
+  object-fit: cover; /* crop and fill without distortion */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(17, 17, 17, 0.7); /* dark overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay h5 {
+  color: rgb(245, 217, 118); /* golden project title */
+  font-weight: 600;
+}
+
+.project-overlay p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .project-card {
+    height: 250px; /* slightly smaller on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    height: 200px; /* smaller on mobile */
+  }
+
+  .projects-section .section-heading {
+    font-size: 2rem;
+  }
+
+  .project-overlay p {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ================= ABOUT DEVELOPER SECTION ================= */
+.about-developer-section {
+  background-color: #111; /* dark background */
+  color: #fff;
+}
+
+.about-developer-card {
+  background-color: #1a1a1a; /* slightly lighter dark card */
+  border: none;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-developer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.about-developer-card .section-title {
+  color: rgb(245, 217, 118); /* golden heading */
+  font-family: 'Bodoni Moda', 'Playfair Display', Didot, "Bodoni MT", serif;
+  font-weight: 700;
+}
+
+.about-developer-card p {
+  color: #ccc; /* slightly muted white for text */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-developer-card {
+    padding: 1.5rem;
+  }
+
+  .about-developer-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-developer-card {
+    padding: 1rem;
+  }
+
+  .about-developer-card p {
+    font-size: 0.9rem;
+  }
+}
+/* ================= DISCLAIMER SECTION ================= */
+.disclaimer-section {
+  background-color: #111; /* dark background */
+  color: #ccc; /* general text */
+  font-family: 'Segoe UI', sans-serif;
+  padding: 3rem 0;
+}
+
+.disclaimer-section .rera-info {
+  font-weight: bold;
+  color: rgb(245, 217, 118); /* golden text */
+  font-size: 0.95rem;
+}
+
+.disclaimer-section .disclaimer-text {
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.disclaimer-section .rights-reserved {
+  color: #fff;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.disclaimer-section .footer-links {
+  margin-top: 1rem;
+}
+
+.disclaimer-section .footer-link {
+  color: rgb(245, 217, 118);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.disclaimer-section .footer-link:hover {
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .disclaimer-section .rera-info,
+  .disclaimer-section .disclaimer-text,
+  .disclaimer-section .rights-reserved {
+    font-size: 0.85rem;
+  }
+
+  .disclaimer-section .footer-link {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .disclaimer-section {
+    padding: 2rem 1rem;
+  }
+
+  .disclaimer-section .disclaimer-text {
+    font-size: 0.8rem;
+  }
+
+  .disclaimer-section .rera-info {
+    font-size: 0.8rem;
+  }
+}
+/* ================= SOCIAL ICONS ================= */
+.social-links {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;
+  gap: 20px; /* spacing between icons */
+}
+
+.social-links .social-icon i {
+  color: rgb(245, 217, 118); /* golden by default */
+  transition: all 0.3s ease;
+}
+
+/* Hover colors to match original brand logos */
+.social-links .social-icon:hover i.bi-instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.social-links .social-icon:hover i.bi-telephone {
+  color: #25a1f9; /* light blue for phone */
+}
+
+.social-links .social-icon:hover i.bi-whatsapp {
+  color: #25D366; /* WhatsApp green */
+}
+
+.social-links .social-icon:hover i.bi-envelope {
+  color: #D44638; /* Gmail red */
+}
+
+
+/* Mobile Sticky Social Links */
+#socialLinks.sticky-bottom {
+  position: fixed !important;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111; /* matches theme */
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1050; /* on top of everything */
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+}
