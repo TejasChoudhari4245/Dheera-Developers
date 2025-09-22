@@ -724,6 +724,14 @@ body {
     font-size: 0.9rem;
   }
 }
+
+.about-section-divider {
+    width: 90%; 
+    height: 1px;       /* thin line */
+    background-color: #6f6e6e; /* white color */
+    margin: 50px auto 20px auto; /* top 50px, bottom 20px, centered horizontally */
+}
+
 /* ================= DISCLAIMER SECTION ================= */
 .disclaimer-section {
   background-color: #111; /* dark background */
@@ -765,6 +773,12 @@ body {
 
 .disclaimer-section .footer-link:hover {
   color: #fff;
+}
+.disclaimer-section-divider{
+   width: 75%; 
+    height: 1px;       /* thin line */
+    background-color: #6f6e6e; /* white color */
+    margin: 50px auto 20px auto;
 }
 
 /* Responsive */
